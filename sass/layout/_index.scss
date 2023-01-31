@@ -1,0 +1,218 @@
+@use "header";
+@use "footer";
+@use "container";
+@use "../abstract/mixins";
+
+.collection {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+
+        &+div {
+            text-align: center;
+            margin-top: 60px;
+
+            a {
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                color: #FF6E30;
+                padding: 10px 30px;
+                display: inline-block;
+
+                &:hover {
+                    background-color: #FF6E30;
+                    border: 1px solid #FF6E30;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__card {
+        padding: 20px;
+        border-radius: 20px;
+
+        &:hover {
+            background: url(../../image/Rectangle\ 5.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &-header {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            h4 {
+                margin: 0 0 10px 0;
+                font-weight: 500;
+                font-size: 24px;
+                color: rgba(255, 255, 255, 0.78);
+            }
+
+            p {
+                margin: 0;
+                font-weight: 400;
+                font-size: 18px;
+                color: rgba(255, 165, 55, 0.55);
+            }
+        }
+
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            i {
+                font-size: 30px;
+                color: rgba(255, 255, 255, 0.78);
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            a {
+                padding: 10px 30px;
+                background: transparent;
+                border: none;
+                border-radius: 8px;
+
+                &:hover {
+                    background: #FF6E30;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.brand {
+    background: url(../../image/brand-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    padding: 50px;
+    margin-top: 60px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        flex-direction: column;
+        padding-left: 0;
+    }
+}
+
+.tools {
+    margin-top: 100px;
+
+    &__content {
+        margin-right: 60px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+    }
+}
+
+.fa-heart {
+    transition: .1s;
+
+    &:active {
+        transform: scale(0.8);
+    }
+}
+
+.become {
+    margin-top: 60px;
+    margin-bottom: 160px;
+    text-align: center;
+
+    .home__search-form {
+        text-align: center;
+        margin: 40px auto;
+    }
+}
+
+.footer {
+    border-top: 1px solid #ccc;
+    padding-top: 60px;
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    &__info {
+        .main__subtitle {
+            width: 80%;
+        }
+    }
+
+    &__list {
+        h5 {
+            font-weight: 500;
+            margin-top: 0;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+@include mixins.media-sm {
+    .collection {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .tools {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .footer {
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@include mixins.media-lg {
+    .collection {
+        &__grid {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .brand {
+        &__list {
+            flex-direction: row;
+        }
+    }
+
+    .tools {
+        display: flex;
+
+    }
+
+    .footer {
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+    }
+}
