@@ -491,7 +491,7 @@ ul {
 }
 .testimonials__info {
   position: absolute;
-  right: -2rem;
+  right: 0rem;
   bottom: 2rem;
   background: rgba(40, 48, 54, 0.2);
   backdrop-filter: blur(25px);
