@@ -1,3 +1,43 @@
 @use "../abstract/variables" as vars;
 @use '../abstract/mixins';
 
+.footer {
+    border-top: 1px solid vars.$light;
+    padding-top: 60px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    &__info {
+        .main__subtitle {
+            width: 80%;
+        }
+    }
+
+    &__list {
+        h5 {
+            font-weight: 500;
+            margin-top: 0;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+@include mixins.media-sm {
+    .footer {
+        &__wrapper {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@include mixins.media-lg {
+    .footer {
+        &__wrapper {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+    }
+}

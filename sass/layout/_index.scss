@@ -16,14 +16,14 @@
             a {
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 8px;
-                color: #FF6E30;
+                color: vars.$main-color;
                 padding: 10px 30px;
                 display: inline-block;
 
                 &:hover {
-                    background-color: #FF6E30;
-                    border: 1px solid #FF6E30;
-                    color: #fff;
+                    background-color: vars.$main-color;
+                    border: 1px solid vars.$main-color;
+                    color: vars.$white;
                 }
             }
         }
@@ -78,8 +78,8 @@
                 border-radius: 8px;
 
                 &:hover {
-                    background: #FF6E30;
-                    color: #fff;
+                    background: vars.$main-color;
+                    color: vars.$white;
                 }
             }
         }
@@ -236,14 +236,14 @@
         height: 6px;
         width: 44px;
         margin: 0 2px;
-        background-color: #bbb;
+        background-color: vars.$light;
         border-radius: 5px;
         display: inline-block;
         transition: background-color 0.6s ease;
 
         &:hover,
         &.active {
-            background-color: #FF6E30;
+            background-color: vars.$main-color;
         }
     }
 
@@ -262,7 +262,7 @@
         user-select: none;
 
         &:hover {
-            color: #FF6E30;
+            color: vars.$main-color;
         }
 
         &:active {
@@ -284,8 +284,6 @@
     }
 }
 
-
-
 @keyframes fade {
     from {
         opacity: .4
@@ -296,30 +294,6 @@
     }
 }
 
-.footer {
-    border-top: 1px solid #ccc;
-    padding-top: 60px;
-
-    &__wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    &__info {
-        .main__subtitle {
-            width: 80%;
-        }
-    }
-
-    &__list {
-        h5 {
-            font-weight: 500;
-            margin-top: 0;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-    }
-}
 
 @include mixins.media-sm {
     .collection {
@@ -330,13 +304,6 @@
 
     .tools {
         &__grid {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .footer {
-        &__wrapper {
-            display: grid;
             grid-template-columns: 1fr 1fr;
         }
     }
@@ -392,13 +359,6 @@
 
         &__next {
             right: -3rem;
-        }
-    }
-
-    .footer {
-        &__wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
         }
     }
 }
